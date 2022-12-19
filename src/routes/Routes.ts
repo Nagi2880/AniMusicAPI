@@ -1,13 +1,12 @@
 import express from 'express'
-import { routesController } from '../controllers/routesController'
+import { routesController } from '../controllers/songsController'
+
 const router = express.Router()
 
-router.get('/songs',routesController.route)
+router.get('/songs',routesController.fetchSongs)
 
 //route for add a song to the website list
-router.post('/songs',(_req,res)=>{
-    res.send('Adding song to the list')
-})
+router.post('/songs',routesController.saveSong)
 
 
 
