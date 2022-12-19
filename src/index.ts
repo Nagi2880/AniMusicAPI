@@ -8,7 +8,7 @@ import songsRoutes from './routes/Routes'
 
 //Initializations
 const app = express()
-import './database'
+import './database/database'
 
 //Settings
 const PORT = 3000 // declare PORT for the localhost
@@ -18,6 +18,11 @@ app.set('port', process.env.PORT ||PORT)
 app.use(express.json()) // middleware to transform req.body into a json
 app.use(express.urlencoded({extended: false}))
 
+//Database
+import Song from './database/models/songSchema'
+new Song({
+    
+})
 //Routes
 app.get('/ping', (_req,res) =>{
     //To soluce the NoUnusualParameters: true use "_" behind of req 
